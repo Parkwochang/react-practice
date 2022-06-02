@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+h1 {
+  margin: 10px 15px;
+}
+
+.movie {
+  display: flex;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px 15px;
+}
+.movie .movie_title {
+  flex-grow: 1;
+}
+
+.movie .movie_year {
+  font-size: 0.5em;
+  color: red;
+}
