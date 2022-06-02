@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import Movie from "./Movie";
-import MovieForm from "./MovieForm";
+import MovieForm from "../component/MovieForm";
+import Movie from "../component/Movie";
 
-export default function Submit() {
+export default function Movies() {
   const [movies, setMovies] = useState([]);
-
   const removeMovie = (id) => {
-    setMovies(movies.filter(movie => {
-      return movie.id !== id;
-    }))
+    setMovies(
+      movies.filter((movie) => {
+        return movie.id !== id;
+      })
+    );
   };
 
   const rendomMovie = movies.length

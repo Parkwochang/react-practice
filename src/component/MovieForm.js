@@ -16,10 +16,10 @@ export default function MovieForm({ addMovie }) {
     resetErrors();
     let validated = true;
     if (!movieTitle) {
-      setTitleError("영화제목을 넣어주세요");
+      setTitleError("Please enter the movie title");
       validated = false;
     } else if (!movieYear) {
-      setYearError("개봉연도를 넣어주세요");
+      setYearError("Please enter the year of opening");
       validated = false;
     }
 
@@ -38,13 +38,37 @@ export default function MovieForm({ addMovie }) {
       resetErrors();
       resetForm();
     }
-
   };
   return (
     <form onSubmit={onSubmit}>
-      <InputField type='text' value={movieTitle} placeholder="영화제목" onChange={e => setMovieTitle(e.target.value)} errorMessage={titleError}/>      
-      <InputField type='number' value={movieYear} placeholder="개봉연도" onChange={e => setMovieYear(e.target.value)} errorMessage={yearError}/>
-      <button>영화추가</button>
+      <div className="mb-3">
+        <label htmlFor="exampleInputEmail1" className="form-label">
+          Film title
+        </label>
+        <InputField
+          id="exampleInputEmail1"
+          type="text"
+          value={movieTitle}
+          onChange={(e) => setMovieTitle(e.target.value)}
+          errorMessage={titleError}
+        />
+        <div id="emailHelp" className="form-text">
+          Please fill in correctly.
+        </div>
+      </div>
+      <div className="mb-3">
+        <label htmlFor="exampleInputEmail1" className="form-label">
+          Year of manufacture
+        </label>
+        <InputField
+          id="exampleInputPassword1"
+          type="number"
+          value={movieYear}
+          onChange={(e) => setMovieYear(e.target.value)}
+          errorMessage={yearError}
+        />
+      </div>
+      <button type="submit" className="btn btn-outline-success mb-4">Add movie</button>
     </form>
   );
 }
